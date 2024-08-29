@@ -79,7 +79,7 @@
 
     }
   ],
-  "volunteer": [
+  "outreach": [
     {
       "organization": "Astronomy on Tap Boston",
       "location": "Boston, MA, USA",
@@ -87,6 +87,13 @@
       "url": "https://astronomyontap.org/locations/boston-ma/",
       "summary": "Organize Astronomy on Tap events in Boston, MA, bringing astronomy to the public in a fun and engaging way.",
       "highlights": ["April 11, 2024: Solar System Exploration", "October 16, 2023: AI in Astronomy"]
+    },
+    {
+      "organization": "MIT Sidewalk Astrogazers",
+      "location": "Cambridge, MA, USA",
+      "position": "Co-director",
+      "url": "https://astrogazers.mit.edu/",
+      "summary": "Co-direct the MIT Sidewalk Astrogazers from Jan 2023 to Aug 2024, organizing public stargazing events and astronomy outreach activities."
     }
   ],
   "languages": [
