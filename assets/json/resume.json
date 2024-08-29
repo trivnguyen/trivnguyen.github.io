@@ -83,7 +83,7 @@
   "interests": [
     {
       "name": "Astrophysics",
-      "icon": "fa-solid fa-tag",
+      "icon": "fa-space-shuttle",
       "keywords": [
         "Dark Matter",
         "Galaxy Formation and Evolution",
@@ -92,7 +92,7 @@
     },
     {
       "name": "Machine Learning",
-      "icon": "fa-solid fa-tag",
+      "icon": " fa-android",
       "keywords": [
         "Simulation-based Inference",
         "Generative Models: Diffusion, Flows",
