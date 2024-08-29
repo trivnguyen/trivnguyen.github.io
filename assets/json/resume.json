@@ -44,7 +44,8 @@
       "location": "Boston, MA, USA",
       "position": "Organizer",
       "url": "https://astronomyontap.org/locations/boston-ma/",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history."
+      "summary": "Organize Astronomy on Tap events in Boston, MA, bringing astronomy to the public in a fun and engaging way.",
+      "highlights": ["April 11, 2024: Solar System Exploration", "October 16, 2023: AI in Astronomy"]
     }
   ],
   "education": [
@@ -55,9 +56,7 @@
       "area": "Physics, Astrophysics Division",
       "studyType": "PhD",
       "startDate": "2019-06-01",
-      "endDate": "2024-08-16",
-      "score": "",
-      "courses": [""]
+      "endDate": "2024-08-16"
     },
     {
       "institution": "University of Rochester",
@@ -66,9 +65,7 @@
       "area": "Physics & Astronomy",
       "studyType": "BSc",
       "startDate": "2015-08-20",
-      "endDate": "2019-05-20",
-      "score": "",
-      "courses": [""]
+      "endDate": "2019-05-20"
     }
   ],
   "languages": [
