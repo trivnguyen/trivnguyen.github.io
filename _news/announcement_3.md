@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Defended my Ph.D. thesis! 🎉
+Defended my Ph.D. thesis! 🎉🍾🍹⚡🐹
