@@ -3,27 +3,32 @@
   contents:
     - name: Full Name
       value: Tri Nguyen
+    - name: Email
+      value: tnguy at mit dot edu
+    - name: Website
+      value: <a href='https://trivnguyen.github.io'><u>trivnguyen.github.io</u></a>
 
 - title: Education
   type: time_table
   contents:
     - title: Ph.D. in Physics, Astrophysics Division
-      institution: Massachusetts Institute of Technology
+      institution:  <a href='https://space.mit.edu/'><u>Massachusetts Institute of Technology</u></a>
       year: 2019 - 2024
       description:
-        - Advisor: Prof. Lina Necib
+        - <b>Advisor:</b> Prof. Lina Necib
+        - <b>Thesis:</b> Decoding Dark Matter Halos through the lens of Machine Learning
     - title: B.S. in Physics & Astronomy
-      institution: University of Rochester
+      institution: <a href='https://pas.rochester.edu/'><u>University of Rochester</u></a>
       year: 2015 - 2019
 
 - title: Experience
   type: time_table
   contents:
     - title: Postdoctoral Fellow
-      institution: CIERA, Northwestern University
+      institution: <a href='https://ciera.northwestern.edu/'><u>CIERA</u></a>, Northwestern University
       year: 2024 - present
     - title: Pre-doctoral Research Analyst
-      institution: Center for Computational Astrophysics, Flatiron Institute
+      institution: <a href='https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/'><u>Center for Computational Astrophysics</u></a>, Flatiron Institute
       year: 2022 - 2023
 
 - title: Academic Interests
@@ -37,7 +42,7 @@
     - title: Machine Learning
       items:
         - Simulation-based Inference
-        - Generative Models, Diffusion, Normalizing Flows
+        - "Generative Models: Diffusion, Normalizing Flows"
         - Multi-modal Learning
 
 - title: Public Engagement
@@ -55,10 +60,10 @@
         - Organized monthly public astronomy talks in local bars.
         - title: "Lead Organizer:"
           contents:
-            - "April 11, 2024: Solar System Exploration"
-            - "October 16, 2023: AI in Astronomy"
+            - <a href='https://astronomyontap.org/event/astronomy-on-tap-boston-solar-system-exploration/'><u>Solar System Exploration, Apr 11, 2024</u></a>
+            - <a href='https://astronomyontap.org/event/astronomy-on-tap-boston-ai-in-astronomy/'><u>AI in Astronomy, Oct 16, 2023</u></a>
 
-- title: Other Interests
-  type: list
-  contents:
-    - <u>Hobbies:</u> Breaking (Breakdancing), Urban Exploring, Boba Tea
+# - title: Other Interests
+  # type: list
+  # contents:
+  #   - <u>Hobbies:</u> Breaking (Breakdancing), Urban Exploring, Boba Tea

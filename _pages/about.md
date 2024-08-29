@@ -2,15 +2,14 @@
 layout: about
 title: about
 permalink: /
-subtitle: CIERA Postdoctoral Fellow
+subtitle: Machine Learning, Dark Matter, Galaxy Formation
 
 profile:
   align: right
   image: prof_pic.jpg
   image_circular: true # crops the image to make it circular
   more_info: >
-    <p>Email: tnguy at mit.edu</p>
-    <p>Twitter: @TriAstroML</p>
+    <p>CIERA Postdoctoral Fellow</p>
 
 news: true # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
