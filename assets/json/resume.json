@@ -44,8 +44,6 @@
       "location": "Boston, MA, USA",
       "position": "Organizer",
       "url": "https://astronomyontap.org/locations/boston-ma/",
-      // "startDate": "2014-04-01",
-      // "endDate": "2015-07-01",
       "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history."
     }
   ],
@@ -73,15 +71,6 @@
       "courses": [""]
     }
   ],
-  // "awards": [
-  //   {
-  //     "title": "Nobel Prize in Physics",
-  //     "date": "1921-11-01",
-  //     "awarder": "Royal Swedish Academy of Sciences",
-  //     "url": "https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/",
-  //     "summary": "The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'"
-  //   }
-  // ],
   "languages": [
     {
       "language": "Vietnamese",
