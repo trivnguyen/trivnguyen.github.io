@@ -29,8 +29,6 @@
       "url": "https://ciera.northwestern.edu/",
       "startDate": "2024-09-03",
       "endDate": "",
-      "summary": "",
-      "highlights": [""]
     },
     {
       "name": "Center for Computational Astrophysics, Flatiron Institute",
@@ -38,26 +36,23 @@
       "url": "https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/",
       "startDate": "2022-08-22",
       "endDate": "2023-01-24",
-      "summary": "",
-      "highlights": [""]
     }
   ],
   "volunteer": [
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
+      "organization": "Astronomy on Tap Boston",
+      "location": "Boston, MA, USA",
+      "position": "Organizer",
+      "url": "https://astronomyontap.org/locations/boston-ma/",
+      // "startDate": "2014-04-01",
+      // "endDate": "2015-07-01",
       "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
     }
   ],
   "education": [
     {
       "institution": "Massachusetts Institute of Technology",
-      "location": "Cambridge, Massachusetts, US",
+      "location": "Cambridge, MA, USA",
       "url": "https://space.mit.edu/",
       "area": "Physics, Astrophysics Division",
       "studyType": "PhD",
@@ -68,7 +63,7 @@
     },
     {
       "institution": "University of Rochester",
-      "location": "Rochester, New York, US",
+      "location": "Rochester, NY, USA",
       "url": "https://www.pas.rochester.edu/",
       "area": "Physics & Astronomy",
       "studyType": "BSc",
