@@ -22,32 +22,6 @@
       }
     ]
   },
-  "work": [
-    {
-      "name": "CIERA, Northwestern University",
-      "position": "Postdoctoral Fellow",
-      "url": "https://ciera.northwestern.edu/",
-      "startDate": "2024-09-03",
-      "endDate": ""
-    },
-    {
-      "name": "Center for Computational Astrophysics, Flatiron Institute",
-      "position": "Pre-doctoral Research Analyst",
-      "url": "https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/",
-      "startDate": "2022-08-22",
-      "endDate": "2023-01-24"
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "Astronomy on Tap Boston",
-      "location": "Boston, MA, USA",
-      "position": "Organizer",
-      "url": "https://astronomyontap.org/locations/boston-ma/",
-      "summary": "Organize Astronomy on Tap events in Boston, MA, bringing astronomy to the public in a fun and engaging way.",
-      "highlights": ["April 11, 2024: Solar System Exploration", "October 16, 2023: AI in Astronomy"]
-    }
-  ],
   "education": [
     {
       "institution": "Massachusetts Institute of Technology",
@@ -68,16 +42,20 @@
       "endDate": "2019-05-20"
     }
   ],
-  "languages": [
+  "work": [
     {
-      "language": "Vietnamese",
-      "fluency": "Native speaker",
-      "icon": ""
+      "name": "CIERA, Northwestern University",
+      "position": "Postdoctoral Fellow",
+      "url": "https://ciera.northwestern.edu/",
+      "startDate": "2024-09-03",
+      "endDate": ""
     },
     {
-      "language": "English",
-      "fluency": "Fluent",
-      "icon": ""
+      "name": "Center for Computational Astrophysics, Flatiron Institute",
+      "position": "Pre-doctoral Research Analyst",
+      "url": "https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/",
+      "startDate": "2022-08-22",
+      "endDate": "2023-01-24"
     }
   ],
   "interests": [
@@ -101,6 +79,28 @@
 
     }
   ],
+  "volunteer": [
+    {
+      "organization": "Astronomy on Tap Boston",
+      "location": "Boston, MA, USA",
+      "position": "Organizer",
+      "url": "https://astronomyontap.org/locations/boston-ma/",
+      "summary": "Organize Astronomy on Tap events in Boston, MA, bringing astronomy to the public in a fun and engaging way.",
+      "highlights": ["April 11, 2024: Solar System Exploration", "October 16, 2023: AI in Astronomy"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "Vietnamese",
+      "fluency": "Native speaker",
+      "icon": ""
+    },
+    {
+      "language": "English",
+      "fluency": "Fluent",
+      "icon": ""
+    }
+  ],
   "references": [
     {
       "name": "Professor Lina Necib",
@@ -108,4 +108,5 @@
       "reference": "PhD Advisor"
     }
   ]
+
 }
