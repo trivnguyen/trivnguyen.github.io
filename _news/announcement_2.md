@@ -1,11 +1,11 @@
 ---
 layout: post
-date: 2024-08-25 00:00:00-0000
+date: 2024-08-25 00:00:01-0000
 inline: true
 related_posts: false
 ---
 
-Move to Chicago! 🏙🌨🍕⛲⛱
+Moved to Chicago! 🏙🌨🍕⛲⛱
 
 <!--
 Announcements and news can be much longer than just quick inline posts. In fact, they can have all the features available for the standard blog posts. See below.
