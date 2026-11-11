@@ -19,9 +19,9 @@ links:
   - label: CV
     url: /assets/pdf/cv.pdf
 prospective: >
-  **Prospective students.** I take on students through official University of Toronto programs such as
+  **Prospective students.** I only take on students through official University of Toronto programs such as
   SUDS and SURP. If you are interested in working with me on dark matter, dwarf galaxies, stellar streams,
-  or machine learning for astrophysics, please contact Prof. [Ting Li](https://sazabi4.github.io/).
+  or machine learning for astrophysics, please contact me via email.
 ---
 
 I am a **near-field cosmologist** working at the interface of **astrophysics, statistics and machine learning**. I am interested in the particle nature of dark matter and how it shapes structure formation on the smallest scales, using the dwarf galaxies and stellar streams of the Milky Way as my laboratory. Some of the questions I work on:
