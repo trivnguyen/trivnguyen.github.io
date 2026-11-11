@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="Satellites around a host halo">
+  <rect width="320" height="200" fill="#121215"/>
+  <circle cx="160" cy="100" r="60" fill="none" stroke="#8f8e7e" stroke-width="1" stroke-dasharray="2 4"/>
+  <circle cx="160" cy="100" r="10" fill="#f5ff3d"/>
+  <g fill="#2de2ff">
+    <circle cx="118" cy="62" r="4"/><circle cx="214" cy="78" r="3.5"/><circle cx="206" cy="140" r="4"/><circle cx="124" cy="146" r="3"/><circle cx="96" cy="104" r="3.5"/><circle cx="232" cy="110" r="3"/><circle cx="150" cy="40" r="2.5"/><circle cx="180" cy="160" r="3"/>
+  </g>
+  <g fill="#d8d6c2">
+    <circle cx="60" cy="48" r="2"/><circle cx="270" cy="38" r="2"/><circle cx="46" cy="160" r="2"/><circle cx="282" cy="168" r="2"/>
+  </g>
+</svg>
