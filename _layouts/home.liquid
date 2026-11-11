@@ -196,10 +196,40 @@ layout: default
   (function () {
     var band = document.querySelector('.cy-band');
     if (!band || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var rnd = function (a, b) { return a + Math.random() * (b - a); };
+    var colors = ['rgba(45,226,255,', 'rgba(255,45,149,', 'rgba(245,255,61,'];
+    function randomize() {
+      var st = band.style, dur = rnd(0.45, 0.95);
+      st.setProperty('--dur', dur.toFixed(2) + 's');
+      var amp = rnd(5, 16), dir = Math.random() < 0.5 ? -1 : 1;
+      [1, 2, 3, 4, 5, 6].forEach(function (i) {
+        st.setProperty('--j' + i, (dir * amp * rnd(-1, 1)).toFixed(1) + 'px');
+      });
+      st.setProperty('--k1', rnd(-2.5, 2.5).toFixed(2) + 'deg');
+      st.setProperty('--k2', rnd(-2.5, 2.5).toFixed(2) + 'deg');
+      [1, 2, 3, 4, 5].forEach(function (i) {
+        st.setProperty('--b' + i, rnd(-8, 8).toFixed(1) + '%');
+      });
+      var ys = [rnd(4, 28), rnd(30, 52), rnd(54, 74), rnd(76, 96)].sort(function (a, b) { return a - b; });
+      [1, 2, 3, 4].forEach(function (i) {
+        st.setProperty('--y' + i, ys[i - 1].toFixed(0) + '%');
+        st.setProperty('--h' + i, Math.round(rnd(1, 6)) + 'px');
+        st.setProperty('--c' + i, colors[Math.floor(Math.random() * 3)] + rnd(0.35, 0.7).toFixed(2) + ')');
+      });
+      st.setProperty('--hue1', Math.round(rnd(60, 300)) + 'deg');
+      st.setProperty('--hue2', Math.round(rnd(-120, 120)) + 'deg');
+      band.classList.toggle('cy-glitch-soft', Math.random() < 0.25);
+      return dur;
+    }
     function tear() {
       if (band.classList.contains('cy-glitching')) return;
+      var dur = randomize();
       band.classList.add('cy-glitching');
-      setTimeout(function () { band.classList.remove('cy-glitching'); }, 750);
+      setTimeout(function () {
+        band.classList.remove('cy-glitching');
+        // one burst in four comes as a double-tap
+        if (Math.random() < 0.25) setTimeout(tear, rnd(120, 400));
+      }, dur * 1000 + 50);
     }
     var btn = document.getElementById('cy-tear-btn');
     if (btn) {

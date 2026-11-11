@@ -195,7 +195,8 @@ pre {
       z-index: 1;
     }
 
-    // Tear bars for the whole-band glitch: hidden until .cy-glitching is set
+    // Tear bars for the whole-band glitch: hidden until .cy-glitching is set.
+    // Positions and colors come from custom properties the script randomizes per burst.
     .cy-tear {
       position: absolute;
       inset: 0;
@@ -204,10 +205,10 @@ pre {
       opacity: 0;
       mix-blend-mode: screen;
       background:
-        linear-gradient(rgba(45, 226, 255, 0.55), rgba(45, 226, 255, 0.55)) 0 18% / 100% 3px no-repeat,
-        linear-gradient(rgba(255, 45, 149, 0.6), rgba(255, 45, 149, 0.6)) 0 41% / 100% 2px no-repeat,
-        linear-gradient(rgba(245, 255, 61, 0.45), rgba(245, 255, 61, 0.45)) 0 63% / 100% 5px no-repeat,
-        linear-gradient(rgba(45, 226, 255, 0.5), rgba(45, 226, 255, 0.5)) 0 82% / 100% 2px no-repeat;
+        linear-gradient(var(--c1, rgba(45, 226, 255, 0.55)), var(--c1, rgba(45, 226, 255, 0.55))) 0 var(--y1, 18%) / 100% var(--h1, 3px) no-repeat,
+        linear-gradient(var(--c2, rgba(255, 45, 149, 0.6)), var(--c2, rgba(255, 45, 149, 0.6))) 0 var(--y2, 41%) / 100% var(--h2, 2px) no-repeat,
+        linear-gradient(var(--c3, rgba(245, 255, 61, 0.45)), var(--c3, rgba(245, 255, 61, 0.45))) 0 var(--y3, 63%) / 100% var(--h3, 5px) no-repeat,
+        linear-gradient(var(--c4, rgba(45, 226, 255, 0.5)), var(--c4, rgba(45, 226, 255, 0.5))) 0 var(--y4, 82%) / 100% var(--h4, 2px) no-repeat;
     }
   }
 
@@ -1066,24 +1067,25 @@ footer.sticky-bottom {
     animation: cy-jitter 0.45s steps(1) 2;
   }
 
-  // Whole-band glitch: content tears sideways, bars sweep, scanlines flare, stars flash cyan
+  // Whole-band glitch: content tears sideways, bars sweep, scanlines flare, stars flash.
+  // Amplitudes, directions and duration are custom properties set per burst by the script.
   @keyframes cy-band-tear {
     0%   { transform: translateX(0); }
-    12%  { transform: translateX(-9px) skewX(-1.5deg); }
-    24%  { transform: translateX(6px); }
-    36%  { transform: translateX(-3px) skewX(1deg); }
-    48%  { transform: translateX(10px); }
-    60%  { transform: translateX(-5px); }
-    75%  { transform: translateX(2px); }
+    12%  { transform: translateX(var(--j1, -9px)) skewX(var(--k1, -1.5deg)); }
+    24%  { transform: translateX(var(--j2, 6px)); }
+    36%  { transform: translateX(var(--j3, -3px)) skewX(var(--k2, 1deg)); }
+    48%  { transform: translateX(var(--j4, 10px)); }
+    60%  { transform: translateX(var(--j5, -5px)); }
+    75%  { transform: translateX(var(--j6, 2px)); }
     100% { transform: translateX(0); }
   }
 
   @keyframes cy-band-bars {
-    0%   { opacity: 0; transform: translateY(-6%); }
-    10%  { opacity: 1; transform: translateY(2%); }
-    35%  { opacity: 0.6; transform: translateY(-3%); }
-    55%  { opacity: 1; transform: translateY(4%); }
-    80%  { opacity: 0.4; transform: translateY(-1%); }
+    0%   { opacity: 0; transform: translateY(var(--b1, -6%)); }
+    10%  { opacity: 1; transform: translateY(var(--b2, 2%)); }
+    35%  { opacity: 0.6; transform: translateY(var(--b3, -3%)); }
+    55%  { opacity: 1; transform: translateY(var(--b4, 4%)); }
+    80%  { opacity: 0.4; transform: translateY(var(--b5, -1%)); }
     100% { opacity: 0; transform: translateY(0); }
   }
 
@@ -1095,15 +1097,21 @@ footer.sticky-bottom {
 
   @keyframes cy-band-sky {
     0%, 100% { filter: none; }
-    20%      { filter: hue-rotate(160deg) brightness(1.6); }
+    20%      { filter: hue-rotate(var(--hue1, 160deg)) brightness(1.6); }
     50%      { filter: none; }
-    70%      { filter: hue-rotate(-60deg) brightness(1.3); }
+    70%      { filter: hue-rotate(var(--hue2, -60deg)) brightness(1.3); }
   }
 
   .cy-home .cy-band.cy-glitching {
-    > .container { animation: cy-band-tear 0.7s steps(1) 1; }
-    .cy-tear     { animation: cy-band-bars 0.7s steps(1) 1; }
-    &::after     { animation: cy-band-scan 0.7s steps(1) 1; }
-    #cy-sky      { animation: cy-band-sky 0.7s steps(1) 1; }
+    > .container { animation: cy-band-tear var(--dur, 0.7s) steps(1) 1; }
+    .cy-tear     { animation: cy-band-bars var(--dur, 0.7s) steps(1) 1; }
+    &::after     { animation: cy-band-scan var(--dur, 0.7s) steps(1) 1; }
+    #cy-sky      { animation: cy-band-sky var(--dur, 0.7s) steps(1) 1; }
+  }
+
+  // Variant: bars and scanlines only, no content jolt
+  .cy-home .cy-band.cy-glitching.cy-glitch-soft {
+    > .container { animation: none; }
+    #cy-sky      { animation: none; }
   }
 }
