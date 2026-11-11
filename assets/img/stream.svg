@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" role="img" aria-label="A stellar stream with a gap">
-  <rect width="320" height="200" fill="#121215"/>
-  <path d="M20 170 C 90 150, 120 90, 180 70 S 270 40, 305 22" fill="none" stroke="#8f8e7e" stroke-width="1.5"/>
-  <g fill="#f5ff3d">
-    <circle cx="36" cy="162" r="3"/><circle cx="58" cy="156" r="2.5"/><circle cx="80" cy="146" r="3"/><circle cx="104" cy="128" r="2.5"/><circle cx="124" cy="104" r="3"/>
-    <circle cx="208" cy="62" r="2.5"/><circle cx="236" cy="52" r="3"/><circle cx="266" cy="40" r="2.5"/><circle cx="292" cy="28" r="3"/>
-  </g>
-  <circle cx="160" cy="78" r="16" fill="none" stroke="#ff2d95" stroke-width="2" stroke-dasharray="3 3"/>
-</svg>

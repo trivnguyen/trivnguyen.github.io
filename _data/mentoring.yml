@@ -1,35 +1,51 @@
+# Students I have worked closely with. "level" is their level at the time we worked together.
+# "current: true" marks students I am working with now.
 - name: Andy Yu
-  role: undergraduate, University of Toronto
-  program: Summer Undergraduate Data Science (SUDS)
+  current: true
+  level: undergraduate
+  institution: University of Toronto
+  context: SUDS, with Ting Li
   when: 2026 –
-  with: Ting Li
 
-- name: Christine Hao
-  role: undergraduate, Wellesley College
-  program: MIT UROP
-  when: Summer 2024
-  with: Stephanie O'Neil and Mark Vogelsberger
+- name: Ella Marin
+  current: true
+  level: graduate
+  institution: University of Washington
+  context: with Nora Shipp
+  when: 2025 –
+
+- name: Andreas Filipp
+  level: graduate
+  institution: Université de Montréal
+  context: with Yashar Hezaveh and Laurence Perreault-Levasseur
+  when: 2025 – 2026
+
+- name: Rutong Pei
+  level: undergraduate
+  institution: Carnegie Mellon University
+  context: with Nora Shipp and Scott Dodelson
+  when: 2023 – 2024
 
 - name: Hanna Chen
-  role: undergraduate, MIT
-  program: MIT UROP
+  level: undergraduate
+  institution: MIT
+  context: UROP, with Lina Necib
   when: Summer 2023
-  with: Lina Necib
 
 - name: Anna Orgel
-  role: undergraduate, MIT
-  program: MIT UROP
+  level: undergraduate
+  institution: MIT
+  context: UROP, with Lina Necib
   when: Summer 2023
-  with: Lina Necib
 
-- name: Hang (Chelsea) Su
-  role: undergraduate, MIT
-  program: MIT Summer Research Program (MSRP)
+- name: Hang Su (Chelsea)
+  level: undergraduate
+  institution: MIT
+  context: MSRP, with Lina Necib
   when: Summer 2022
-  with: Lina Necib
 
 - name: Michael Huang
-  role: high school, Phillips Exeter Academy
-  program: MIT Research Science Institute (RSI)
+  level: high school
+  institution: Phillips Exeter Academy
+  context: RSI at MIT, with Lina Necib
   when: Summer 2022
-  with: Lina Necib

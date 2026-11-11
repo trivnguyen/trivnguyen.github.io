@@ -4,6 +4,7 @@ layout: default
 <div class="cy-home">
   <section class="cy-band cy-bleed">
     <canvas id="cy-sky" aria-hidden="true"></canvas>
+    <div class="cy-tear" aria-hidden="true"></div>
     <div class="container">
       <div class="cy-readout">
         <span><b>{% bibliography_count %}</b> papers</span>
@@ -13,8 +14,11 @@ layout: default
       </div>
 
       <div class="cy-bio">
-        <div class="cy-portrait">
-          <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Tri Nguyen">
+        <div class="cy-portrait-col">
+          <div class="cy-portrait">
+            <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Tri Nguyen">
+          </div>
+          <button type="button" class="cy-tear-btn" id="cy-tear-btn" hidden>// jack in</button>
         </div>
         <div class="cy-bio-text">
           <p class="cy-eyebrow" id="cy-eyebrow">[ {{ page.position }} ] · {{ page.affiliation }}</p>
@@ -29,9 +33,11 @@ layout: default
         </div>
       </div>
 
-      <p class="cy-field-label">
-        Field: <b>Draco dSph</b> · 1,335 member stars · Gaia DR3 · ESA/Gaia/DPAC · dashed: half-light radius
-      </p>
+      <div class="cy-field-row">
+        <p class="cy-field-label">
+          Field: <b>Draco dSph</b> · 1,335 member stars · Gaia DR3 · ESA/Gaia/DPAC · dashed: half-light radius
+        </p>
+      </div>
     </div>
   </section>
 
@@ -65,10 +71,12 @@ layout: default
               <img src="{{ t.image | relative_url }}" alt="{{ t.alt }}">
               <div>
                 <h3>{{ t.title }}</h3>
-                <p>
-                  {{ t.text }}
-                  {% if t.paper %}<a class="cy-thread-link" href="{{ t.paper }}">→ paper</a>{% endif %}
-                </p>
+                <p>{{ t.text }}</p>
+                {% if t.papers %}
+                  <div class="cy-tags">
+                    {% for p in t.papers %}<a href="{{ p.url }}">{{ p.label }}</a>{% endfor %}
+                  </div>
+                {% endif %}
               </div>
             </article>
           {% endfor %}
@@ -85,11 +93,24 @@ layout: default
 
       <section id="mentoring">
         <h2>// Mentoring</h2>
+        <p class="cy-section-note">Students I have worked closely with, at their level when we worked together.</p>
+        {% assign current = site.data.mentoring | where: "current", true %}
+        {% assign former = site.data.mentoring | where_exp: "m", "m.current != true" %}
+        <h3 class="cy-subhead">Current</h3>
         <div class="cy-mentees">
-          {% for m in site.data.mentoring %}
+          {% for m in current %}
             <div>
-              <b>{{ m.name }}</b> · {{ m.role }}
-              <small>{{ m.program }} · {{ m.when }}{% if m.with %} · with {{ m.with }}{% endif %}</small>
+              <b>{{ m.name }}</b> · {{ m.level }}, {{ m.institution }}
+              <small>{{ m.context }} · {{ m.when }}</small>
+            </div>
+          {% endfor %}
+        </div>
+        <h3 class="cy-subhead">Former</h3>
+        <div class="cy-mentees">
+          {% for m in former %}
+            <div>
+              <b>{{ m.name }}</b> · {{ m.level }}, {{ m.institution }}
+              <small>{{ m.context }} · {{ m.when }}</small>
             </div>
           {% endfor %}
         </div>
@@ -170,6 +191,30 @@ layout: default
     schedule();
   })();
 
+  // Once in a while the whole bio band tears for 0.7 s. Much rarer than the
+  // name and title effects. First burst comes early; then every 40–70 s.
+  (function () {
+    var band = document.querySelector('.cy-band');
+    if (!band || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function tear() {
+      if (band.classList.contains('cy-glitching')) return;
+      band.classList.add('cy-glitching');
+      setTimeout(function () { band.classList.remove('cy-glitching'); }, 750);
+    }
+    var btn = document.getElementById('cy-tear-btn');
+    if (btn) {
+      btn.hidden = false;
+      btn.addEventListener('click', tear);
+    }
+    function schedule(delay) {
+      setTimeout(function () {
+        if (!document.hidden) tear();
+        schedule(40000 + Math.random() * 30000);
+      }, delay);
+    }
+    schedule(6000);
+  })();
+
   // Draco point cloud behind the bio band: 1,335 Gaia DR3 member stars on the
   // tangent plane, drifting slowly. Static for viewers who prefer reduced motion.
   (function () {
@@ -188,22 +233,28 @@ layout: default
     }
     function draw() {
       if (!stars) return;
-      var W = cv.width, H = cv.height, cx = W * 0.78, cy = H * 0.5;
-      var scale = Math.min(W, H) / 60;
+      var W = cv.width, H = cv.height;
+      // On narrow screens the text spans the full width, so park the cloud in the
+      // top-right corner, smaller and fainter, instead of behind the paragraphs.
+      var narrow = (W / dpr) < 900;
+      var cx = narrow ? W * 0.86 : W * 0.78;
+      var cy = narrow ? H * 0.14 : H * 0.5;
+      var scale = (narrow ? Math.min(W, H) / 110 : Math.min(W, H) / 60);
+      var dim = narrow ? 0.45 : 1;
       ctx.clearRect(0, 0, W, H);
       var ca = Math.cos(angle), sa = Math.sin(angle);
       for (var i = 0; i < stars.length; i++) {
         var x = stars[i][0], y = stars[i][1], g = stars[i][2];
         var px = cx + (x * ca - y * sa) * scale, py = cy - (x * sa + y * ca) * scale;
         var rad = Math.max((21 - g) * 0.42 * dpr, 0.8 * dpr);
-        var a = Math.min(0.18 + (20.7 - g) * 0.1, 0.7);
+        var a = Math.min(0.18 + (20.7 - g) * 0.1, 0.7) * dim;
         ctx.fillStyle = 'rgba(245,255,61,' + a.toFixed(2) + ')';
         ctx.beginPath(); ctx.arc(px, py, rad, 0, 6.283); ctx.fill();
       }
       // Draco half-light radius: 10.0', ellipticity 0.31, position angle 89 deg
       var rh = 10 * scale, pa = (89 * Math.PI / 180) + angle;
       ctx.save(); ctx.translate(cx, cy); ctx.rotate(-pa + Math.PI / 2);
-      ctx.strokeStyle = 'rgba(255,45,149,0.5)'; ctx.lineWidth = 1.2 * dpr; ctx.setLineDash([6 * dpr, 6 * dpr]);
+      ctx.strokeStyle = 'rgba(255,45,149,' + (0.5 * dim) + ')'; ctx.lineWidth = 1.2 * dpr; ctx.setLineDash([6 * dpr, 6 * dpr]);
       ctx.beginPath(); ctx.ellipse(0, 0, rh, rh * 0.69, 0, 0, 6.283); ctx.stroke(); ctx.restore();
     }
     function tick() { angle += 0.0010; draw(); raf = requestAnimationFrame(tick); }

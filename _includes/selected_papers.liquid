@@ -1,3 +1,7 @@
-<div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
+<div class="publications cy-selected">
+  {% bibliography --group_by none --query @*[priority=1]* %}
+  {% bibliography --group_by none --query @*[priority=2]* %}
+  {% bibliography --group_by none --query @*[priority=3]* %}
+  {% bibliography --group_by none --query @*[priority=4]* %}
+  {% bibliography --group_by none --query @*[priority=5]* %}
 </div>

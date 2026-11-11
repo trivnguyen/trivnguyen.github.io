@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started as an NSERC CPRA–Dunlap Fellow at the [Dunlap Institute](https://www.dunlap.utoronto.ca/), University of Toronto! 🇨🇦🔭
+Started as an NSERC CPRA–Dunlap Fellow at the [University of Toronto](https://www.astro.utoronto.ca/)! 🇨🇦🔭

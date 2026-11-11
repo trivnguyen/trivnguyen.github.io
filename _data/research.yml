@@ -1,23 +1,63 @@
-- title: Dwarf galaxies — density profiles from stellar kinematics
-  text: Graph neural networks and neural posterior estimation, trained on the FIRE simulations and applied to Draco and the ultra-faint Boötes I.
+- title: Dwarf galaxies
+  text: >
+    Dwarf galaxies are the most dark-matter-dominated systems in the Universe, and how their dark matter is
+    distributed is a direct test of dark matter physics. I am interested in developing novel, robust inference
+    techniques that extract the dark matter content of a dwarf from the kinematics of a few dozen stars. I am also
+    interested in tackling the systematics of spectroscopic surveys, from selection functions to membership
+    selection, and actively work with observers to fold them into the inference and to apply it to new observations
+    of the Milky Way's dwarfs.
   image: /assets/img/dwarfs.jpg
   alt: The Large Magellanic Cloud
-  paper: https://arxiv.org/abs/2606.26218
+  papers:
+    - label: Draco &amp; Boötes I
+      url: https://arxiv.org/abs/2606.26218
+    - label: Trial by FIRE
+      url: https://arxiv.org/abs/2503.03812
+    - label: GraphNPE
+      url: https://arxiv.org/abs/2208.12825
 
-- title: Stellar streams — subhalo constraints from stream gaps
-  text: Implicit likelihood inference forecasts for Rubin LSST, with the DESC Dark Matter Working Group.
-  image: /assets/img/stream.svg
-  alt: A stellar stream with a gap
-  paper: https://arxiv.org/abs/2512.07960
+- title: Stellar streams
+  text: >
+    Stellar streams are the tidal remnants of dwarf galaxies and globular clusters. As stellar streams orbit the
+    Milky Way, they are perturbed by dark matter subhalos, which create visible features such as gaps and spurs in
+    the stream that can be traced back to the subhalo. I am actively working on several projects that use stellar
+    kinematics from large photometric and spectroscopic surveys to hunt for subhalos, using machine learning and
+    simulation-based inference. I am especially interested in the model-selection side of the problem: whether a
+    stream's features can be explained without a subhalo at all, and how to answer that question with a statistical
+    framework that is robust to the choices made along the way.
+  image: /assets/img/field_of_streams.jpg
+  alt: The SDSS Field of Streams, stellar streams in the Milky Way halo
+  papers:
+    - label: Stream forecasts
+      url: https://arxiv.org/abs/2512.07960
 
-- title: Halo assembly — generative models for merger trees
-  text: "FLORAH: normalizing flows and graph generative models that emulate halo assembly histories."
+- title: Halo assembly
+  text: >
+    How dark matter halos grow through mergers shapes the properties of the galaxies they host. Fast, accurate
+    models of assembly histories and full merger trees are challenging to build. Analytic methods miss the
+    dependence on environment and internal structure, and N-body simulations are expensive. With the
+    <a href="https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/galaxy-formation/">Galaxy
+    Formation group at the CCA</a>, I developed generative models that produce assembly histories and merger trees
+    with the statistical fidelity of simulations at a fraction of the cost, as a backbone for semi-analytic galaxy
+    models.
   image: /assets/img/merger_tree.jpeg
   alt: A dark matter halo merger tree
-  paper: https://arxiv.org/abs/2507.10652
+  papers:
+    - label: FLORAH
+      url: https://arxiv.org/abs/2308.05145
+    - label: FLORAH-Tree
+      url: https://arxiv.org/abs/2507.10652
 
-- title: Satellite populations — diffusion models on point clouds
-  text: Emulating satellite galaxy and subhalo populations across the DREAMS simulation suite.
+- title: Galaxy-halo connection
+  text: >
+    The connection between galaxies and their dark matter halos is central to cosmology and to testing dark matter
+    models. Hydrodynamic simulations are among the leading methods to study the galaxy-halo connection, but their
+    computational cost limits their ability to fully explore the dark matter and baryonic parameter space. I authored
+    NeHOD, a variational diffusion model that paints galaxies and subhalos onto dark matter halos, which the
+    <a href="https://www.dreams-project.org/">DREAMS collaboration</a> uses to turn a thousand simulations into
+    predictions across the whole parameter space.
   image: /assets/img/satellites.svg
   alt: Satellites around a host halo
-  paper: https://doi.org/10.3847/1538-4357/ae28dc
+  papers:
+    - label: NeHOD
+      url: https://doi.org/10.3847/1538-4357/ae28dc

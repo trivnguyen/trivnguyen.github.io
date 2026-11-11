@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-NeHOD paper officially on arXiv [arxiv:2409.02980](https://arxiv.org/abs/2409.02980)
+New paper out: How DREAMS are made: Emulating Satellite Galaxy and Subhalo Populations with Diffusion Models and Point Clouds [arXiv:2409.02980](https://arxiv.org/abs/2409.02980)

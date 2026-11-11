@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-New paper on forecasting dark matter subhalo constraints from stellar streams with implicit likelihood inference [arXiv:2512.07960](https://arxiv.org/abs/2512.07960)
+New paper out: Forecasting Dark Matter Subhalo Constraints from Stellar Streams using Implicit Likelihood Inference [arXiv:2512.07960](https://arxiv.org/abs/2512.07960)

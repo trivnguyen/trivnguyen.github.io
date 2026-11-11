@@ -5,7 +5,7 @@ permalink: /
 display_name: Tri V. Nguyen
 position: NSERC CPRA – Dunlap Fellow
 affiliation: Dunlap Institute for Astronomy and Astrophysics · University of Toronto
-location: Toronto 43.66N 79.40W
+location: Toronto 43.661N 79.397W
 email_text: tri.nguyen [at] astro.utoronto.ca
 links:
   - label: GitHub
@@ -19,11 +19,17 @@ links:
   - label: CV
     url: /assets/pdf/cv.pdf
 prospective: >
-  **Prospective students.** I co-advise undergraduate and graduate students at the University of Toronto.
-  If you are a U of T student interested in dark matter, dwarf galaxies, or machine learning for astrophysics,
-  email me a short note about what you would like to work on.
+  **Prospective students.** I take on students through official University of Toronto programs such as
+  SUDS and SURP. If you are interested in working with me on dark matter, dwarf galaxies, stellar streams,
+  or machine learning for astrophysics, please contact Prof. [Ting Li](https://sazabi4.github.io/).
 ---
 
-I study the nature of dark matter and its role in galaxy formation at the smallest scales — the dwarf galaxies and stellar streams of the Milky Way — by developing machine learning methods for cosmological simulations and survey data: simulation-based inference, generative models, and graph networks.
+I am a **near-field cosmologist** working at the interface of **astrophysics, statistics and machine learning**. I am interested in the particle nature of dark matter and how it shapes structure formation on the smallest scales, using the dwarf galaxies and stellar streams of the Milky Way as my laboratory. Some of the questions I work on:
 
-Before Toronto I was a CIERA Postdoctoral Fellow at Northwestern University and a postdoctoral affiliate of the NSF–Simons [SkAI Institute](https://skai-institute.org/). I completed my Ph.D. in Physics at MIT in 2024, advised by [Lina Necib](https://lnecib.com/), and my B.S. in Physics & Astronomy at the University of Rochester.
+- Are the centers of dwarf galaxies cusped or cored, and what does that tell us about dark matter?
+- How many dark subhalos orbit the Milky Way, and can stellar streams detect them?
+- What are the shape, mass profile, and assembly history of the Milky Way's dark matter halo?
+
+On the statistics and machine learning side, I am interested in developing novel and robust inference techniques, and I work on making them reliable, e.g. calibrated posteriors, robustness to the mismatch between simulations and data, and principled model comparison.
+
+Before Toronto I was a [CIERA](https://ciera.northwestern.edu/) Postdoctoral Fellow at Northwestern University and a postdoctoral affiliate of the NSF–Simons [SkAI Institute](https://skai-institute.org/). I completed my Ph.D. in Physics at MIT in 2024 with Prof. [Lina Necib](https://lnecib.com/), where I was also a member of the NSF AI Institute for Artificial Intelligence and Fundamental Interactions ([IAIFI](https://iaifi.org/)). I received my B.S. in Physics & Astronomy from the University of Rochester in 2019.

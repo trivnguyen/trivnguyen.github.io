@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-FLORAH-tree paper on arXiv: emulating dark matter halo merger trees with graph generative models [arXiv:2507.10652](https://arxiv.org/abs/2507.10652)
+New paper out: FLORAH-Tree: Emulating Dark Matter Halo Merger Trees with Graph Generative Models [arXiv:2507.10652](https://arxiv.org/abs/2507.10652)
