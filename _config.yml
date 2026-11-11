@@ -6,9 +6,9 @@ title: Tri Nguyen # the website title (if blank, full name will be used instead)
 first_name: Tri
 middle_name: V.
 last_name: Nguyen
-email: tnguy at mit.edu
+email: tri.nguyen at astro.utoronto.ca
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Personal Website of Dr. Tri Nguyen, astrophysicist at CIERA, Northwestern University.
+  Personal website of Dr. Tri Nguyen, astrophysicist at the Dunlap Institute for Astronomy and Astrophysics, University of Toronto.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -242,7 +242,6 @@ exclude:
   - lighthouse_results/
   - package.json
   - package-lock.json
-  - _pages/about_einstein.md
   - purgecss.config.js
   - README.md
   - readme_preview/

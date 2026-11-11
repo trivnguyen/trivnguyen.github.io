@@ -2,9 +2,9 @@
   type: map
   contents:
     - name: Full Name
-      value: Tri Nguyen
+      value: Tri V. Nguyen
     - name: Email
-      value: tnguy at mit dot edu
+      value: tri.nguyen at astro dot utoronto dot ca
     - name: Website
       value: <a href='https://trivnguyen.github.io'><u>trivnguyen.github.io</u></a>
 
@@ -12,7 +12,7 @@
   type: time_table
   contents:
     - title: Ph.D. in Physics, Astrophysics Division
-      institution:  <a href='https://space.mit.edu/'><u>Massachusetts Institute of Technology</u></a>
+      institution: <a href='https://space.mit.edu/'><u>Massachusetts Institute of Technology</u></a>
       year: 2019 - 2024
       description:
         - <b>Advisor:</b> Prof. Lina Necib
@@ -20,50 +20,173 @@
     - title: B.S. in Physics & Astronomy
       institution: <a href='https://pas.rochester.edu/'><u>University of Rochester</u></a>
       year: 2015 - 2019
+      description:
+        - Magna Cum Laude with the highest distinction
 
-- title: Experience
+- title: Professional Appointments
   type: time_table
   contents:
-    - title: Postdoctoral Fellow
+    - title: NSERC CPRA - Dunlap Fellow
+      institution: <a href='https://www.dunlap.utoronto.ca/'><u>Dunlap Institute for Astronomy and Astrophysics</u></a>, University of Toronto
+      year: 2026 - present
+    - title: CIERA Postdoctoral Fellow
       institution: <a href='https://ciera.northwestern.edu/'><u>CIERA</u></a>, Northwestern University
-      year: 2024 - present
-    - title: Pre-doctoral Research Analyst
+      year: 2024 - 2026
+    - title: Pre-Doctoral Research Analyst
       institution: <a href='https://www.simonsfoundation.org/flatiron/center-for-computational-astrophysics/'><u>Center for Computational Astrophysics</u></a>, Flatiron Institute
       year: 2022 - 2023
+    - title: Undergraduate Research Fellow
+      institution: Caltech LIGO SURF, California Institute of Technology
+      year: 2018
 
-- title: Academic Interests
+- title: Professional Affiliations
+  type: time_table
+  contents:
+    - title: Postdoctoral Affiliate
+      institution: The NSF-Simons AI Institute for the Sky (<a href='https://skai-institute.org/'><u>SkAI Institute</u></a>)
+      year: 2024 - present
+    - title: Graduate Student Affiliate
+      institution: The NSF AI Institute for Artificial Intelligence and Fundamental Interactions (<a href='https://iaifi.org/'><u>IAIFI</u></a>)
+      year: 2022 - 2024
+
+- title: Research Interests
   type: nested_list
   contents:
     - title: Astrophysics
       items:
         - Dark Matter
-        - Galaxy Formation and Evolution
-        - Near-field Cosmology
+        - Dwarf Galaxies
+        - Stellar Streams
+        - Galactic Dynamics
+        - Galaxy Formation & Evolution
     - title: Machine Learning
       items:
         - Simulation-based Inference
-        - "Generative Models: Diffusion, Normalizing Flows"
+        - "Generative Models: Diffusions, Flows"
+        - Geometric Deep Learning
         - Multi-modal Learning
 
-- title: Public Engagement
+- title: Selected External Collaborations
   type: time_table
   contents:
-    - title: Co-director
-      institution: MIT Sidewalk Astrogazers
+    - title: Vera C. Rubin Observatory LSST Dark Energy Science Collaboration (DESC)
+      description:
+        - Dark Matter Working Group member, leading stellar stream simulation-based inference projects
+    - title: DaRk mattEr and Astrophysics with Machine learning and Simulations (DREAMS)
+      description:
+        - Core member, leading development of machine learning methods
+    - title: Feedback In Realistic Environment (FIRE) Simulation
+    - title: Dark Energy Spectroscopic Instrument (DESI)
+      description:
+        - Milky Way working group member
+
+- title: Awards and Honors
+  type: time_table
+  contents:
+    - title: NSERC Canada Postdoctoral Research Award (CPRA)
+      year: 2026
+      description:
+        - Canadian national fellowship awarded through a highly competitive selection process
+    - title: IVADO Postdoctoral Fellowship (declined)
+      year: 2026
+      description:
+        - Canadian fellowship in AI and data science awarded through a highly competitive selection process
+    - title: CIERA Postdoctoral Fellowship, Northwestern University
+      year: 2024
+      description:
+        - University fellowship awarded through a highly competitive selection process
+    - title: LEAdership and Professional Strategies and Skills (LEAPS) Certificate, MIT
+      year: 2023
+    - title: Graduate Student Service Award, MIT
+      year: 2023
+      description:
+        - Astrophysics Division recognition for outstanding service to the graduate community
+    - title: Undergraduate Teaching Award, University of Rochester
+      year: 2019
+      description:
+        - Department of Physics & Astronomy recognition for excellence in undergraduate teaching
+    - title: Rush Rhees Scholarship, University of Rochester
+      year: 2015 - 2019
+      description:
+        - Merit-based scholarship awarded to undergraduate students for academic excellence
+
+- title: Leadership Roles & Professional Services
+  type: time_table
+  contents:
+    - title: Member, NASA AI/ML Science & Technology Interest Group Leadership Council
+      year: 2026 - 2027
+      description:
+        - Organize weekly lectures and seminars in AI/ML and astronomy
+    - title: Member, OpenSkAI Conference Scientific Organizing Committee (SOC)
+      year: 2026
+    - title: Co-chair, OpenSkAI Conference Local Organizing Committee (LOC)
+      year: 2025
+      description:
+        - Inaugural interdisciplinary AI-astronomy conference, 149 participants, 42 talks and 39 posters
+    - title: Co-organizer, SkAI Journal Club
+      year: 2024 - present
+      description:
+        - Bi-weekly astronomy and AI interdisciplinary journal club across Northwestern, Chicago, Illinois, and partner institutes
+    - title: Reviewer, peer-reviewed journals, workshops and conferences
+      year: 2021 - present
+      description:
+        - "Journals: ApJ, A&C, A&A, Phys. Rev. D, Phys. Rev. Lett."
+        - "Workshops and conferences: ML4Astro (ICML 2023, 2025), ML4PS (NeurIPS 2022, 2023, 2024, 2025)"
+    - title: Co-organizer, Astronomy on Tap Boston
       year: 2023 - 2024
       description:
-        - Organized public sidewalk stargazing events and astronomy outreach activities
-    - title: Organizer
-      institution: Astronomy on Tap Boston
-      year: 2019 - 2024
+        - Monthly public astronomy events in bars and cafes, 4+ events each reaching 100+ attendees
+    - title: Co-director, MIT Astrogazers Initiative
+      year: 2022 - 2024
       description:
-        - Organized monthly public astronomy talks in local bars.
-        - title: "Lead Organizer:"
-          contents:
-            - <a href='https://astronomyontap.org/event/astronomy-on-tap-boston-solar-system-exploration/'><u>Solar System Exploration, Apr 11, 2024</u></a>
-            - <a href='https://astronomyontap.org/event/astronomy-on-tap-boston-ai-in-astronomy/'><u>AI in Astronomy, Oct 16, 2023</u></a>
+        - Graduate student organization for astronomy public engagement and outreach activities
+    - title: Member, IAIFI Public Engagement Committee
+      year: 2021 - 2024
 
-# - title: Other Interests
-  # type: list
-  # contents:
-  #   - <u>Hobbies:</u> Breaking (Breakdancing), Urban Exploring, Boba Tea
+- title: Mentoring and Advising
+  type: time_table
+  contents:
+    - title: Andy Yu, Summer Undergraduate Data Science (SUDS), University of Toronto
+      year: 2026 - present
+      description:
+        - Co-advised with Ting Li
+    - title: Christine Hao, MIT UROP (Wellesley College)
+      year: 2024
+      description:
+        - Co-advised with Stephanie O'Neil and Mark Vogelsberger
+    - title: Hanna Chen & Anna Orgel, MIT UROP
+      year: 2023
+      description:
+        - Co-advised with Lina Necib
+    - title: Hang (Chelsea) Su, MIT Summer Research Program (MSRP)
+      year: 2022
+      description:
+        - Co-advised with Lina Necib
+    - title: Michael Huang, MIT Research Science Institute (RSI)
+      year: 2022
+      description:
+        - Co-advised with Lina Necib
+
+- title: Teaching Experience
+  type: time_table
+  contents:
+    - title: Graduate Teaching Assistant
+      institution: Massachusetts Institute of Technology
+      year: 2020 - 2024
+      description:
+        - 8.022 Physics II (Spring 2024, Spring 2022)
+        - 8.01L Physics I (Fall 2021)
+        - 8.S50 Computational Data Science in Physics (Jan 2021, Jan 2020)
+    - title: Undergraduate Teaching Assistant
+      institution: University of Rochester
+      year: 2016 - 2018
+      description:
+        - PHY 121 Mechanics Lab (Spring 2018, Spring 2017)
+        - PHY 235 Classical Mechanics (Fall 2018)
+        - AST 111 The Solar System & Its Origin (Fall 2017)
+        - PHY 113 Mechanics Lab (Fall 2016)
+
+- title: Languages
+  type: list
+  contents:
+    - English (fluent), Vietnamese (fluent), French (basic)
