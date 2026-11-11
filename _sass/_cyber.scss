@@ -1,0 +1,918 @@
+/*******************************************************************************
+ * Cyberpunk theme — overrides al-folio's palette and restyles its components.
+ * Loaded last from assets/css/main.scss so it wins the cascade.
+ ******************************************************************************/
+
+$cy-ground: #0b0b0d;
+$cy-panel: #121215;
+$cy-footer: #060607;
+$cy-line: #2a2a30;
+$cy-text: #d8d6c2;
+$cy-muted: #8f8e7e;
+$cy-yellow: #f5ff3d;
+$cy-cyan: #2de2ff;
+$cy-magenta: #ff2d95;
+
+$cy-display: "Chakra Petch", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+$cy-body: "Barlow", "Helvetica Neue", Arial, sans-serif;
+$cy-mono: "JetBrains Mono", Menlo, Consolas, monospace;
+
+@mixin cy-chamfer($c: 14px) {
+  clip-path: polygon(0 0, calc(100% - #{$c}) 0, 100% #{$c}, 100% 100%, #{$c} 100%, 0 calc(100% - #{$c}));
+}
+
+@mixin cy-label {
+  font-family: $cy-mono;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $cy-yellow;
+}
+
+// ---------------------------------------------------------------------------
+// Palette: the same values for both of al-folio's themes, so the site is dark
+// regardless of OS preference or any stale localStorage theme setting.
+// ---------------------------------------------------------------------------
+:root,
+html[data-theme="dark"],
+html[data-theme="light"] {
+  --global-bg-color: #{$cy-ground};
+  --global-code-bg-color: #{$cy-panel};
+  --global-text-color: #{$cy-text};
+  --global-text-color-light: #{$cy-muted};
+  --global-theme-color: #{$cy-yellow};
+  --global-hover-color: #{$cy-magenta};
+  --global-hover-text-color: #{$cy-ground};
+  --global-footer-bg-color: #{$cy-footer};
+  --global-footer-text-color: #{$cy-muted};
+  --global-footer-link-color: #{$cy-yellow};
+  --global-distill-app-color: #{$cy-muted};
+  --global-divider-color: #{$cy-line};
+  --global-card-bg-color: #{$cy-panel};
+  --global-highlight-color: #{$cy-magenta};
+  --global-back-to-top-bg-color: rgba(245, 255, 61, 0.9);
+  --global-back-to-top-text-color: #{$cy-ground};
+  --global-newsletter-bg-color: #{$cy-ground};
+  --global-newsletter-text-color: #{$cy-yellow};
+}
+
+// ---------------------------------------------------------------------------
+// Type
+// ---------------------------------------------------------------------------
+html {
+  overflow-x: clip; // the full-bleed band is 100vw wide; stop the document scrolling sideways
+}
+
+body {
+  font-family: $cy-body;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  overflow-x: clip; // the full-bleed band is 100vw wide, which would otherwise add a sideways scroll
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.post-title,
+.navbar-brand {
+  font-family: $cy-display;
+  letter-spacing: 0.01em;
+}
+
+a {
+  color: $cy-cyan;
+
+  &:hover {
+    color: $cy-magenta;
+    text-decoration: none;
+  }
+}
+
+code,
+kbd,
+pre {
+  font-family: $cy-mono;
+}
+
+.cy-mono {
+  font-family: $cy-mono;
+}
+
+.cy-label {
+  @include cy-label;
+}
+
+// ---------------------------------------------------------------------------
+// Navbar: yellow top rule, mono uppercase links
+// ---------------------------------------------------------------------------
+.navbar.navbar-light {
+  border-top: 4px solid $cy-yellow;
+  border-bottom: 1px solid $cy-line;
+  opacity: 1;
+
+  .navbar-brand {
+    font-family: $cy-mono;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $cy-yellow;
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-family: $cy-mono;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $cy-yellow;
+
+    &:hover {
+      color: $cy-magenta;
+    }
+  }
+
+  .navbar-nav .nav-item.active > .nav-link {
+    color: $cy-text;
+    font-weight: 700;
+    border-bottom: 2px solid $cy-magenta;
+  }
+
+  #search-toggle .nav-link {
+    color: $cy-muted;
+  }
+}
+
+.navbar-toggler .icon-bar {
+  background-color: $cy-yellow;
+}
+
+// ---------------------------------------------------------------------------
+// Full-bleed helpers
+// ---------------------------------------------------------------------------
+.cy-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.cy-hazard {
+  height: 8px;
+  background: repeating-linear-gradient(135deg, $cy-yellow 0 14px, $cy-ground 14px 28px);
+}
+
+// ---------------------------------------------------------------------------
+// Home page
+// ---------------------------------------------------------------------------
+.cy-home {
+  margin-top: -3rem; // cancel the default layout's mt-5 so the band meets the navbar
+
+  .cy-band {
+    position: relative;
+    overflow: hidden;
+    background: $cy-panel;
+
+    #cy-sky {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, 0.32) 2px 3px);
+      pointer-events: none;
+    }
+
+    > .container {
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .cy-field-label {
+    margin: 0;
+    padding: 0.6rem 0 0.9rem;
+    border-top: 1px solid $cy-line;
+    font-family: $cy-mono;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: $cy-muted;
+    text-align: right;
+
+    b {
+      font-weight: 500;
+      color: $cy-yellow;
+    }
+  }
+
+  .cy-readout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 2rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid $cy-line;
+    font-family: $cy-mono;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: $cy-muted;
+    font-variant-numeric: tabular-nums;
+
+    b {
+      font-weight: 500;
+      color: $cy-yellow;
+    }
+  }
+
+  .cy-bio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.25rem 3.25rem;
+    padding: 3.25rem 0 3.5rem;
+  }
+
+  .cy-portrait {
+    flex: 0 0 288px;
+    width: 288px;
+    height: 344px;
+    padding: 3px;
+    box-sizing: border-box;
+    background: $cy-yellow;
+    @include cy-chamfer(26px);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 50% 30%;
+      @include cy-chamfer(24px);
+    }
+  }
+
+  .cy-bio-text {
+    flex: 999 1 420px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+
+    p {
+      margin: 0;
+      max-width: 64ch;
+    }
+  }
+
+  .cy-eyebrow {
+    @include cy-label;
+    font-weight: 500;
+    line-height: 1.6;
+    position: relative;
+
+    .cy-ghost {
+      visibility: hidden;
+    }
+
+    .cy-typed {
+      position: absolute;
+      inset: 0;
+    }
+
+    .cy-cursor {
+      display: inline-block;
+      width: 0.55em;
+      height: 1em;
+      margin-left: 0.15em;
+      vertical-align: -0.15em;
+      background: $cy-yellow;
+      animation: cy-blink 1s steps(1) infinite;
+
+      &.cy-cursor-done {
+        animation: none;
+        opacity: 0;
+        transition: opacity 0.6s;
+      }
+    }
+  }
+
+  @keyframes cy-blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .cy-name {
+    margin: 0;
+    font-family: $cy-display;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 5.2vw, 4.6rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: $cy-yellow;
+    cursor: default;
+
+    &:hover,
+    &.cy-glitching {
+      text-shadow:
+        3px 0 rgba(45, 226, 255, 0.55),
+        -3px 0 rgba(255, 45, 149, 0.55);
+    }
+  }
+
+  .cy-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1.5rem;
+    align-items: baseline;
+    font-family: $cy-mono;
+    font-size: 0.82rem;
+
+    .cy-email {
+      color: $cy-muted;
+    }
+
+    a {
+      color: $cy-text;
+      border-bottom: 1px solid $cy-muted;
+      padding-bottom: 1px;
+
+      &:hover {
+        color: $cy-yellow;
+        border-bottom-color: $cy-yellow;
+      }
+    }
+  }
+
+  .cy-body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 4rem;
+    padding: 3rem 0 4rem;
+  }
+
+  .cy-index {
+    flex: 0 1 300px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    nav {
+      display: flex;
+      flex-direction: column;
+    }
+
+    a.cy-idx {
+      display: block;
+      font-family: $cy-display;
+      font-weight: 700;
+      font-size: 2.6rem;
+      line-height: 1;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: $cy-yellow;
+      padding: 1rem 0 1rem 1.1rem;
+      border-top: 1px solid $cy-line;
+      border-left: 3px solid transparent;
+
+      &:hover {
+        color: $cy-magenta;
+        border-left-color: $cy-magenta;
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $cy-line;
+      }
+    }
+
+    .cy-index-note {
+      font-family: $cy-mono;
+      font-size: 0.75rem;
+      line-height: 1.8;
+      letter-spacing: 0.06em;
+      color: $cy-muted;
+    }
+  }
+
+  .cy-main {
+    flex: 999 1 520px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    h2 {
+      @include cy-label;
+      margin: 0;
+      font-size: 0.75rem;
+    }
+
+    .cy-section-head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem 1.5rem;
+
+      a {
+        font-family: $cy-mono;
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  // News: al-folio's news table, restyled
+  .news {
+    .table-responsive {
+      max-height: none !important;
+    }
+
+    table.table {
+      margin: 0;
+      color: $cy-text;
+
+      th,
+      td {
+        padding: 0.35rem 0;
+        vertical-align: top;
+        border: 0;
+      }
+
+      th {
+        font-family: $cy-mono;
+        font-weight: 400;
+        font-size: 0.8rem;
+        color: $cy-muted;
+        white-space: nowrap;
+        padding-right: 1.25rem;
+        width: auto !important;
+      }
+    }
+  }
+
+  // Research threads
+  .cy-thread {
+    display: grid;
+    grid-template-columns: 132px minmax(0, 1fr);
+    gap: 0.75rem 1.5rem;
+    align-items: start;
+    padding: 1.35rem 0;
+    border-top: 1px solid $cy-line;
+
+    &:last-child {
+      border-bottom: 1px solid $cy-line;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      @include cy-chamfer(14px);
+    }
+
+    h3 {
+      margin: 0 0 0.35rem;
+      font-family: $cy-display;
+      font-weight: 600;
+      font-size: 1.3rem;
+      line-height: 1.2;
+      color: $cy-yellow;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.95rem;
+      max-width: 64ch;
+    }
+
+    .cy-thread-link {
+      font-family: $cy-mono;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 575px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  // Mentoring
+  .cy-mentees {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: 0.75rem 2rem;
+    font-size: 0.95rem;
+
+    div {
+      padding: 0.6rem 0;
+      border-top: 1px solid $cy-line;
+    }
+
+    b {
+      font-weight: 600;
+      color: $cy-text;
+    }
+
+    small {
+      display: block;
+      font-family: $cy-mono;
+      font-size: 0.72rem;
+      color: $cy-muted;
+    }
+  }
+
+  .cy-prospective {
+    max-width: 68ch;
+    padding: 1rem 1.25rem;
+    background: $cy-panel;
+    border-left: 3px solid $cy-yellow;
+    font-size: 0.95rem;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  // Record readout: awards, service, outreach
+  .cy-record {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 1.5rem 2.5rem;
+
+    h3 {
+      @include cy-label;
+      margin: 0 0 0.6rem;
+      font-size: 0.7rem;
+      color: $cy-muted;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 0.92rem;
+    }
+
+    li {
+      padding: 0.35rem 0;
+      border-top: 1px solid $cy-line;
+    }
+
+    .cy-year {
+      font-family: $cy-mono;
+      font-size: 0.78rem;
+      color: $cy-yellow;
+      margin-right: 0.6rem;
+      font-variant-numeric: tabular-nums;
+    }
+  }
+}
+
+// Selected papers on the home page and the full publications page
+.publications {
+  margin-top: 0;
+
+  h2.bibliography {
+    font-family: $cy-mono;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: $cy-yellow;
+    text-align: left;
+    border-top: 1px solid $cy-line;
+    padding-top: 1rem;
+    margin-top: 2rem;
+  }
+
+  ol.bibliography li {
+    padding: 1rem 0;
+    margin-bottom: 0;
+    border-top: 1px solid $cy-line;
+
+    &:last-child {
+      border-bottom: 1px solid $cy-line;
+    }
+
+    .title {
+      font-family: $cy-display;
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      color: $cy-text;
+    }
+
+    .author {
+      font-size: 0.92rem;
+      color: $cy-muted;
+
+      em {
+        color: $cy-text;
+        border-bottom-color: $cy-yellow;
+      }
+
+      a {
+        border-bottom-color: $cy-muted;
+      }
+    }
+
+    .periodical {
+      font-family: $cy-mono;
+      font-size: 0.78rem;
+      color: $cy-muted;
+      font-style: normal;
+    }
+
+    .links {
+      margin-top: 0.4rem;
+
+      a.btn,
+      a.btn.btn-sm {
+        font-family: $cy-mono;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: $cy-yellow;
+        border: 1px solid $cy-yellow;
+        border-radius: 0;
+        padding: 0.3rem 0.65rem;
+        margin-right: 0.4rem;
+        @include cy-chamfer(7px);
+
+        &:hover {
+          background: $cy-yellow;
+          color: $cy-ground;
+        }
+      }
+    }
+
+    .abstract,
+    .bibtex {
+      background: $cy-panel;
+      border: 1px solid $cy-line;
+      border-radius: 0;
+      padding: 1rem;
+      margin-top: 0.75rem;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .bibtex pre,
+    .bibtex code {
+      background: transparent;
+      color: $cy-text;
+    }
+  }
+}
+
+// Terminal-style bib search
+.bibsearch-form-input {
+  font-family: $cy-mono;
+  font-size: 0.9rem;
+  color: $cy-yellow;
+  background: $cy-ground;
+  border: 1px solid $cy-yellow;
+  border-radius: 0;
+  box-shadow: none;
+  caret-color: $cy-yellow;
+  max-width: 420px;
+  @include cy-chamfer(9px);
+
+  &::placeholder {
+    color: $cy-muted;
+  }
+
+  &:focus {
+    border-color: $cy-magenta;
+    outline: none;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Generic pages: title, description, lists
+// ---------------------------------------------------------------------------
+.post {
+  .post-title {
+    font-family: $cy-display;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: $cy-yellow;
+  }
+
+  .post-description,
+  .post-header .desc {
+    font-family: $cy-mono;
+    font-size: 0.85rem;
+    color: $cy-muted;
+  }
+
+  article h2 {
+    @include cy-label;
+    font-size: 0.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+// Talks and software lists
+.cy-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 0.25rem 1.25rem;
+    align-items: baseline;
+    padding: 0.75rem 0;
+    border-top: 1px solid $cy-line;
+
+    &:last-child {
+      border-bottom: 1px solid $cy-line;
+    }
+
+    @media (max-width: 575px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .cy-when {
+    font-family: $cy-mono;
+    font-size: 0.78rem;
+    color: $cy-yellow;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .cy-what {
+    font-weight: 600;
+    color: $cy-text;
+  }
+
+  .cy-where {
+    display: block;
+    font-size: 0.9rem;
+    color: $cy-muted;
+  }
+
+  .cy-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.4rem;
+
+    a,
+    span {
+      font-family: $cy-mono;
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: $cy-yellow;
+      border: 1px solid $cy-yellow;
+      padding: 0.3rem 0.65rem;
+      @include cy-chamfer(7px);
+    }
+
+    a:hover {
+      background: $cy-yellow;
+      color: $cy-ground;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 404
+// ---------------------------------------------------------------------------
+.cy-404 {
+  padding: 4rem 0;
+
+  .cy-404-code {
+    font-family: $cy-display;
+    font-weight: 700;
+    font-size: clamp(4rem, 14vw, 9rem);
+    line-height: 0.9;
+    color: $cy-yellow;
+    text-shadow:
+      4px 0 rgba(45, 226, 255, 0.55),
+      -4px 0 rgba(255, 45, 149, 0.55);
+  }
+
+  .cy-404-line {
+    font-family: $cy-mono;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $cy-muted;
+    margin-top: 1.5rem;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
+footer.sticky-bottom {
+  position: relative;
+  border-top: 0;
+  background: $cy-footer;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+  font-family: $cy-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $cy-muted;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: repeating-linear-gradient(135deg, $cy-yellow 0 14px, $cy-ground 14px 28px);
+  }
+
+  .container {
+    text-align: left;
+  }
+
+  a {
+    color: $cy-yellow;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// CV page: keep al-folio's layout, tint the badges
+// ---------------------------------------------------------------------------
+.cv {
+  .card {
+    background: $cy-panel;
+    border: 1px solid $cy-line;
+    border-radius: 0;
+  }
+
+  .badge {
+    font-family: $cy-mono;
+    background: $cy-yellow !important;
+    color: $cy-ground !important;
+    border-radius: 0;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Motion: the glitch jitter only when the viewer allows motion
+// ---------------------------------------------------------------------------
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes cy-jitter {
+    0%,
+    100% {
+      text-shadow:
+        3px 0 rgba(45, 226, 255, 0.55),
+        -3px 0 rgba(255, 45, 149, 0.55);
+    }
+    20% {
+      text-shadow:
+        -2px 0 rgba(45, 226, 255, 0.55),
+        2px 0 rgba(255, 45, 149, 0.55);
+    }
+    40% {
+      text-shadow:
+        4px 1px rgba(45, 226, 255, 0.55),
+        -4px -1px rgba(255, 45, 149, 0.55);
+    }
+    60% {
+      text-shadow:
+        -1px 0 rgba(45, 226, 255, 0.55),
+        1px 0 rgba(255, 45, 149, 0.55);
+    }
+    80% {
+      text-shadow:
+        3px -1px rgba(45, 226, 255, 0.55),
+        -3px 1px rgba(255, 45, 149, 0.55);
+    }
+  }
+
+  .cy-home .cy-name:hover,
+  .cy-home .cy-name.cy-glitching {
+    animation: cy-jitter 0.45s steps(1) 2;
+  }
+}

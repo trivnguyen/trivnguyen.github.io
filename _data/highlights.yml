@@ -1,0 +1,32 @@
+- title: Awards
+  items:
+    - when: "2026"
+      text: NSERC Canada Postdoctoral Research Award (CPRA)
+    - when: "2026"
+      text: IVADO Postdoctoral Fellowship (declined)
+    - when: "2024"
+      text: CIERA Postdoctoral Fellowship, Northwestern University
+
+- title: Service
+  items:
+    - when: 2026–27
+      text: NASA AI/ML Science & Technology Interest Group, Leadership Council
+    - when: "2026"
+      text: OpenSkAI Conference, Scientific Organizing Committee
+    - when: "2025"
+      text: OpenSkAI Conference, co-chair of the inaugural Local Organizing Committee
+    - when: 2024 –
+      text: SkAI Journal Club, co-organizer
+    - when: 2021 –
+      text: Reviewer for ApJ, A&A, Phys. Rev. D, Phys. Rev. Lett., ML4Astro and ML4PS
+
+- title: Outreach
+  items:
+    - when: "2025"
+      text: Astronomy on Tap Chicago, speaker
+    - when: 2024–25
+      text: Adler Planetarium, Astronomy Conversations presenter
+    - when: 2023–24
+      text: Astronomy on Tap Boston, co-organizer
+    - when: 2022–24
+      text: MIT Astrogazers, co-director

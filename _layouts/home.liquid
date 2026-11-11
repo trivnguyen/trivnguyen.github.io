@@ -1,0 +1,220 @@
+---
+layout: default
+---
+<div class="cy-home">
+  <section class="cy-band cy-bleed">
+    <canvas id="cy-sky" aria-hidden="true"></canvas>
+    <div class="container">
+      <div class="cy-readout">
+        <span><b>{% bibliography_count %}</b> papers</span>
+        <span><b>{{ site.data.research | size }}</b> threads</span>
+        <span>last build <b>{{ site.time | date: '%Y.%m.%d' }}</b></span>
+        <span>{{ page.location }}</span>
+      </div>
+
+      <div class="cy-bio">
+        <div class="cy-portrait">
+          <img src="{{ '/assets/img/prof_pic.jpg' | relative_url }}" alt="Tri Nguyen">
+        </div>
+        <div class="cy-bio-text">
+          <p class="cy-eyebrow" id="cy-eyebrow">[ {{ page.position }} ] · {{ page.affiliation }}</p>
+          <h1 class="cy-name">{{ page.display_name }}</h1>
+          {{ content }}
+          <div class="cy-links">
+            <span class="cy-email">{{ page.email_text }}</span>
+            {% for link in page.links %}
+              <a href="{{ link.url }}">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <p class="cy-field-label">
+        Field: <b>Draco dSph</b> · 1,335 member stars · Gaia DR3 · ESA/Gaia/DPAC · dashed: half-light radius
+      </p>
+    </div>
+  </section>
+
+  <div class="cy-hazard cy-bleed"></div>
+
+  <div class="cy-body">
+    <aside class="cy-index">
+      <nav aria-label="Sections">
+        <a class="cy-idx" href="#news">News</a>
+        <a class="cy-idx" href="#research">Research</a>
+        <a class="cy-idx" href="#papers">Papers</a>
+        <a class="cy-idx" href="#mentoring">Mentoring</a>
+      </nav>
+      <p class="cy-index-note">
+        FULL LIST, WITH SEARCH → <a href="{{ '/publications/' | relative_url }}">/publications</a><br>
+        CV → <a href="{{ '/assets/pdf/cv.pdf' | relative_url }}">/cv.pdf</a>
+      </p>
+    </aside>
+
+    <main class="cy-main">
+      <section id="news">
+        <h2>// News</h2>
+        {% include news.liquid limit=true %}
+      </section>
+
+      <section id="research">
+        <h2>// Research</h2>
+        <div>
+          {% for t in site.data.research %}
+            <article class="cy-thread">
+              <img src="{{ t.image | relative_url }}" alt="{{ t.alt }}">
+              <div>
+                <h3>{{ t.title }}</h3>
+                <p>
+                  {{ t.text }}
+                  {% if t.paper %}<a class="cy-thread-link" href="{{ t.paper }}">→ paper</a>{% endif %}
+                </p>
+              </div>
+            </article>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section id="papers">
+        <div class="cy-section-head">
+          <h2>// Selected papers</h2>
+          <a href="{{ '/publications/' | relative_url }}">All {% bibliography_count %} →</a>
+        </div>
+        {% include selected_papers.liquid %}
+      </section>
+
+      <section id="mentoring">
+        <h2>// Mentoring</h2>
+        <div class="cy-mentees">
+          {% for m in site.data.mentoring %}
+            <div>
+              <b>{{ m.name }}</b> · {{ m.role }}
+              <small>{{ m.program }} · {{ m.when }}{% if m.with %} · with {{ m.with }}{% endif %}</small>
+            </div>
+          {% endfor %}
+        </div>
+        {% if page.prospective %}
+          <div class="cy-prospective">{{ page.prospective | markdownify }}</div>
+        {% endif %}
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+  // Terminal-style reveal of the position line. The full text ships in the HTML;
+  // this only re-types it, and does nothing for viewers who prefer reduced motion.
+  (function () {
+    var el = document.getElementById('cy-eyebrow');
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var text = el.textContent.replace(/\s+/g, ' ').trim();
+    // An invisible copy of the full line keeps the layout height fixed while typing.
+    var ghost = document.createElement('span');
+    ghost.className = 'cy-ghost';
+    ghost.setAttribute('aria-hidden', 'true');
+    ghost.textContent = text;
+    var typed = document.createElement('span');
+    typed.className = 'cy-typed';
+    var cursor = document.createElement('span');
+    cursor.className = 'cy-cursor';
+    cursor.setAttribute('aria-hidden', 'true');
+    el.setAttribute('aria-label', text);
+    el.textContent = '';
+    el.appendChild(ghost);
+    el.appendChild(typed);
+    typed.appendChild(cursor);
+    var i = 0;
+    var HOLD = 12000; // how long the finished line sits before it is cleared and retyped
+    function type() {
+      if (i < text.length) {
+        typed.insertBefore(document.createTextNode(text.charAt(i)), cursor);
+        i += 1;
+        var ch = text.charAt(i - 1);
+        setTimeout(type, ch === ' ' ? 60 : ch === '·' || ch === ']' ? 320 : 34);
+      } else {
+        setTimeout(waitThenErase, HOLD);
+      }
+    }
+    function waitThenErase() {
+      // don't burn cycles retyping a line nobody is looking at
+      if (document.hidden) { setTimeout(waitThenErase, 5000); return; }
+      erase();
+    }
+    function erase() {
+      if (i > 0) {
+        typed.removeChild(cursor.previousSibling);
+        i -= 1;
+        setTimeout(erase, 12);
+      } else {
+        setTimeout(type, 500);
+      }
+    }
+    setTimeout(type, 350);
+  })();
+
+  // The name glitches on its own now and then: a short chromatic jitter burst
+  // at a random interval. Hover still triggers the same burst. Off under reduced motion.
+  (function () {
+    var el = document.querySelector('.cy-name');
+    if (!el || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    function burst() {
+      el.classList.add('cy-glitching');
+      setTimeout(function () { el.classList.remove('cy-glitching'); }, 900);
+    }
+    function schedule() {
+      setTimeout(function () {
+        if (!document.hidden) burst();
+        schedule();
+      }, 3000 + Math.random() * 4000);
+    }
+    schedule();
+  })();
+
+  // Draco point cloud behind the bio band: 1,335 Gaia DR3 member stars on the
+  // tangent plane, drifting slowly. Static for viewers who prefer reduced motion.
+  (function () {
+    var cv = document.getElementById('cy-sky');
+    if (!cv || !cv.getContext) return;
+    var ctx = cv.getContext('2d');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var stars = null, angle = 0, raf = null;
+
+    function size() {
+      var r = cv.getBoundingClientRect();
+      cv.width = Math.round(r.width * dpr);
+      cv.height = Math.round(r.height * dpr);
+      draw();
+    }
+    function draw() {
+      if (!stars) return;
+      var W = cv.width, H = cv.height, cx = W * 0.78, cy = H * 0.5;
+      var scale = Math.min(W, H) / 60;
+      ctx.clearRect(0, 0, W, H);
+      var ca = Math.cos(angle), sa = Math.sin(angle);
+      for (var i = 0; i < stars.length; i++) {
+        var x = stars[i][0], y = stars[i][1], g = stars[i][2];
+        var px = cx + (x * ca - y * sa) * scale, py = cy - (x * sa + y * ca) * scale;
+        var rad = Math.max((21 - g) * 0.42 * dpr, 0.8 * dpr);
+        var a = Math.min(0.18 + (20.7 - g) * 0.1, 0.7);
+        ctx.fillStyle = 'rgba(245,255,61,' + a.toFixed(2) + ')';
+        ctx.beginPath(); ctx.arc(px, py, rad, 0, 6.283); ctx.fill();
+      }
+      // Draco half-light radius: 10.0', ellipticity 0.31, position angle 89 deg
+      var rh = 10 * scale, pa = (89 * Math.PI / 180) + angle;
+      ctx.save(); ctx.translate(cx, cy); ctx.rotate(-pa + Math.PI / 2);
+      ctx.strokeStyle = 'rgba(255,45,149,0.5)'; ctx.lineWidth = 1.2 * dpr; ctx.setLineDash([6 * dpr, 6 * dpr]);
+      ctx.beginPath(); ctx.ellipse(0, 0, rh, rh * 0.69, 0, 0, 6.283); ctx.stroke(); ctx.restore();
+    }
+    function tick() { angle += 0.0010; draw(); raf = requestAnimationFrame(tick); }
+    fetch('{{ "/assets/data/draco.json" | relative_url }}')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        stars = d.points;
+        window.addEventListener('resize', size);
+        size();
+        if (!reduce) raf = requestAnimationFrame(tick);
+      })
+      .catch(function () { /* no data: the band stays plain */ });
+  })();
+</script>

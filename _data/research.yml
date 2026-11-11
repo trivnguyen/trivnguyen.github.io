@@ -1,0 +1,23 @@
+- title: Dwarf galaxies — density profiles from stellar kinematics
+  text: Graph neural networks and neural posterior estimation, trained on the FIRE simulations and applied to Draco and the ultra-faint Boötes I.
+  image: /assets/img/dwarfs.jpg
+  alt: The Large Magellanic Cloud
+  paper: https://arxiv.org/abs/2606.26218
+
+- title: Stellar streams — subhalo constraints from stream gaps
+  text: Implicit likelihood inference forecasts for Rubin LSST, with the DESC Dark Matter Working Group.
+  image: /assets/img/stream.svg
+  alt: A stellar stream with a gap
+  paper: https://arxiv.org/abs/2512.07960
+
+- title: Halo assembly — generative models for merger trees
+  text: "FLORAH: normalizing flows and graph generative models that emulate halo assembly histories."
+  image: /assets/img/merger_tree.jpeg
+  alt: A dark matter halo merger tree
+  paper: https://arxiv.org/abs/2507.10652
+
+- title: Satellite populations — diffusion models on point clouds
+  text: Emulating satellite galaxy and subhalo populations across the DREAMS simulation suite.
+  image: /assets/img/satellites.svg
+  alt: Satellites around a host halo
+  paper: https://doi.org/10.3847/1538-4357/ae28dc

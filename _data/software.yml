@@ -1,0 +1,51 @@
+- name: JeansGNN
+  url: https://github.com/trivnguyen/JeansGNN
+  text: Neural simulation-based inference with graph neural networks for Jeans modeling of dwarf galaxies.
+  paper: https://arxiv.org/abs/2208.12825
+  tags: [Python, PyTorch]
+
+- name: dsph_analysis
+  url: https://github.com/trivnguyen/dsph_analysis
+  text: Analysis tools for dwarf spheroidal kinematics — velocity dispersion and kurtosis profiles, spherical Jeans models, catalog loaders.
+  paper: https://arxiv.org/abs/2606.26218
+  tags: [Python]
+
+- name: sbi_stream
+  url: https://github.com/trivnguyen/sbi_stream
+  text: Simulation-based inference for stellar stream–subhalo interactions.
+  paper: https://arxiv.org/abs/2512.07960
+  tags: [Python]
+
+- name: FLORAH
+  url: https://github.com/trivnguyen/florah
+  text: Generate dark matter halo merger trees with normalizing flows.
+  paper: https://arxiv.org/abs/2308.05145
+  tags: [Python, PyTorch]
+
+- name: florah-tree
+  url: https://github.com/trivnguyen/florah-tree
+  text: Graph generative models for full merger trees, the sequel to FLORAH.
+  paper: https://arxiv.org/abs/2507.10652
+  tags: [Python, PyTorch]
+
+- name: NeHOD
+  url: https://github.com/trivnguyen/nehod_torch
+  text: Neural halo occupation — diffusion models on point clouds that emulate satellite and subhalo populations.
+  paper: https://doi.org/10.3847/1538-4357/ae28dc
+  tags: [Python, PyTorch]
+
+- name: ananke_dr3
+  url: https://github.com/trivnguyen/ananke_dr3
+  text: Synthetic Gaia DR3 surveys from the FIRE simulations of Milky Way-mass galaxies.
+  paper: https://arxiv.org/abs/2306.16475
+  tags: [Python]
+
+- name: sbi-tutorials
+  url: https://github.com/trivnguyen/sbi-tutorials
+  text: Hands-on simulation-based inference tutorials from the LSST DESC stellar stream workshop.
+  tags: [Jupyter, Tutorial]
+
+- name: AST1420 Jeans modeling tutorials
+  url: https://github.com/trivnguyen/AST1420_Jeans_Modeling_Tutorials
+  text: Tutorial notebooks on Jeans modeling for the University of Toronto AST1420 course.
+  tags: [Jupyter, Tutorial]

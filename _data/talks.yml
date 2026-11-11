@@ -1,0 +1,125 @@
+- title: Invited talks
+  items:
+    - when: Aug 2025
+      what: IAIFI Summer Workshop (plenary)
+      where: Harvard University
+    - when: May 2025
+      what: Simulation Based Inference for Galaxy Evolution
+      where: University of Bristol
+    - when: May 2025
+      what: DREAMS Workshop
+      where: Flatiron Institute
+    - when: Mar 2023
+      what: Galaxy Formation and Evolution in the Data Science Era
+      where: Kavli Institute for Theoretical Physics
+    - when: Oct 2020
+      what: NCSA Accelerated Artificial Intelligence for Big-Data Experiments Conference
+      where: Remote
+
+- title: Lectures and tutorials
+  items:
+    - when: Jan 2026
+      what: Lecture on graph neural networks
+      where: NASA Cosmic Origins Program AI/ML Science and Technology Interest Group, remote
+    - when: Nov 2025
+      what: Tutorial on simulation-based inference
+      where: LSST DESC Stellar Stream Workshop, University of Washington
+
+- title: Contributed talks
+  items:
+    - when: Sep 2025
+      what: OpenSkAI Conference
+      where: NSF–Simons AI Institute for the Sky
+    - when: Jul 2025
+      what: ML4Astro Workshop
+      where: ICML 2025
+    - when: May 2025
+      what: Cosmic Horizons Conference
+      where: University of Texas at Austin
+    - when: Dec 2024
+      what: Cosmology and Galaxy Astrophysics with Simulations and Machine Learning
+      where: Flatiron Institute
+    - when: Jul 2023
+      what: ML4Astro Workshop
+      where: ICML 2023
+    - when: Jul 2023
+      what: "Galactic Frontiers: Dwarf Galaxies in the Local Volume and Beyond"
+      where: Flatiron Institute
+    - when: Jun 2023
+      what: Statistical Challenges in Modern Astronomy VIII
+      where: Penn State University
+    - when: May 2023
+      what: "Cosmic Connections: A ML × Astrophysics Symposium"
+      where: Flatiron Institute
+    - when: Jan 2023
+      what: 241st AAS Winter Meeting
+      where: American Astronomical Society
+    - when: Jul 2022
+      what: ML4Astro Workshop
+      where: ICML 2022
+    - when: Mar 2022
+      what: IAIFI–AIMLAC Lightning Talk
+      where: Massachusetts Institute of Technology
+    - when: Sep 2019
+      what: Fast Machine Learning Workshop
+      where: Fermilab
+    - when: Jan 2019
+      what: 233rd AAS Winter Meeting
+      where: American Astronomical Society
+
+- title: Seminars
+  items:
+    - when: May 2026
+      what: Astronomy Lunch Talk
+      where: University of Washington
+    - when: Jan 2026
+      what: CITA Seminar
+      where: University of Toronto
+    - when: Jun 2025
+      what: Astrophysics Research Group Seminar
+      where: University of Surrey
+    - when: Mar 2025
+      what: TASTY Seminar
+      where: University of Toronto
+    - when: Feb 2025
+      what: Astronomy and Astrophysics Seminar
+      where: Université de Montréal
+    - when: Feb 2025
+      what: Machine Learning for Physical Sciences Seminar
+      where: Mila – Québec AI Institute
+    - when: Jan 2025
+      what: CIERA Theory Seminar
+      where: Northwestern University
+    - when: Sep 2024
+      what: CIERA Theory Seminar
+      where: Northwestern University
+    - when: Jan 2024
+      what: Cosmology Journal Club
+      where: Carnegie Mellon University
+    - when: Jan 2024
+      what: Physics Journal Club
+      where: University of Pittsburgh
+    - when: Dec 2023
+      what: Dark Cosmos Seminar
+      where: Princeton University
+    - when: Nov 2023
+      what: Astronomy Lunch Talk
+      where: University of Washington
+    - when: Nov 2023
+      what: Kavli Institute for Cosmological Physics Seminar
+      where: University of Chicago
+    - when: Oct 2023
+      what: CIERA Theory Seminar
+      where: Northwestern University
+    - when: Dec 2022
+      what: Astrophysics Lunch Talk
+      where: Flatiron Institute
+    - when: Nov 2022
+      what: Blackboard Lunch Talk
+      where: Columbia University
+    - when: Oct 2022
+      what: Nature of Dark Matter on Small Scales Seminar
+      where: Remote
+    - when: Sep 2021
+      what: AI in Astronomy
+      where: University of São Paulo
