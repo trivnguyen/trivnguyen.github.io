@@ -408,7 +408,9 @@ pre {
     font-size: 0.82rem;
 
     .cy-email {
-      color: $cy-muted;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: $cy-text;
     }
 
     a {
