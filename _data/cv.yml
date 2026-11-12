@@ -59,12 +59,13 @@
         - Stellar Streams
         - Galactic Dynamics
         - Galaxy Formation & Evolution
-    - title: Machine Learning
+    - title: Statistics & Machine Learning
       items:
         - Simulation-based Inference
+        - Robust Inference & Model Selection
+        - Uncertainty Quantification & Calibration
         - "Generative Models: Diffusions, Flows"
         - Geometric Deep Learning
-        - Multi-modal Learning
 
 - title: Selected External Collaborations
   type: time_table
@@ -87,10 +88,6 @@
       year: 2026
       description:
         - Canadian national fellowship awarded through a highly competitive selection process
-    - title: IVADO Postdoctoral Fellowship (declined)
-      year: 2026
-      description:
-        - Canadian fellowship in AI and data science awarded through a highly competitive selection process
     - title: CIERA Postdoctoral Fellowship, Northwestern University
       year: 2024
       description:
@@ -146,26 +143,38 @@
 - title: Mentoring and Advising
   type: time_table
   contents:
-    - title: Andy Yu, Summer Undergraduate Data Science (SUDS), University of Toronto
+    - title: Andy Yu, undergraduate, University of Toronto
       year: 2026 - present
       description:
-        - Co-advised with Ting Li
-    - title: Christine Hao, MIT UROP (Wellesley College)
-      year: 2024
+        - Summer Undergraduate Data Science (SUDS), co-advised with Ting Li
+    - title: Ella Marin, graduate student, University of Washington
+      year: 2025 - present
       description:
-        - Co-advised with Stephanie O'Neil and Mark Vogelsberger
-    - title: Hanna Chen & Anna Orgel, MIT UROP
+        - Collaborator, with Nora Shipp
+    - title: Andreas Filipp, graduate student, Université de Montréal
+      year: 2025 - 2026
+      description:
+        - Collaborator, with Yashar Hezaveh and Laurence Perreault-Levasseur
+    - title: Rutong Pei, undergraduate, Carnegie Mellon University
+      year: 2023 - 2024
+      description:
+        - Collaborator, with Nora Shipp and Scott Dodelson
+    - title: Hanna Chen, undergraduate, MIT
       year: 2023
       description:
-        - Co-advised with Lina Necib
-    - title: Hang (Chelsea) Su, MIT Summer Research Program (MSRP)
+        - MIT UROP, co-advised with Lina Necib
+    - title: Anna Orgel, undergraduate, MIT
+      year: 2023
+      description:
+        - MIT UROP, co-advised with Lina Necib
+    - title: Hang Su, undergraduate, MIT
       year: 2022
       description:
-        - Co-advised with Lina Necib
-    - title: Michael Huang, MIT Research Science Institute (RSI)
+        - MIT Summer Research Program (MSRP), co-advised with Lina Necib
+    - title: Michael Huang, high school student, Phillips Exeter Academy
       year: 2022
       description:
-        - Co-advised with Lina Necib
+        - MIT Research Science Institute (RSI), co-advised with Lina Necib
 
 - title: Teaching Experience
   type: time_table
