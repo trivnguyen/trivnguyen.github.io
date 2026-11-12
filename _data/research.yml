@@ -25,8 +25,8 @@
     simulation-based inference. I am especially interested in the model-selection side of the problem: whether a
     stream's features can be explained without a subhalo at all, and how to answer that question with a statistical
     framework that is robust to the choices made along the way.
-  image: /assets/img/field_of_streams.jpg
-  alt: The SDSS Field of Streams, stellar streams in the Milky Way halo
+  image: /assets/img/streams_s5.jpg
+  alt: Artist's impression of the Milky Way surrounded by stellar streams, James Josephides and the S5 Collaboration
   papers:
     - label: Stream forecasts
       url: https://arxiv.org/abs/2512.07960

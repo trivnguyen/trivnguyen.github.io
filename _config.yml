@@ -11,7 +11,7 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Personal website of Dr. Tri Nguyen, near-field cosmologist at the Dunlap Institute for Astronomy and Astrophysics, University of Toronto: dwarf galaxies, stellar streams, machine learning and astrostatistics.
 footer_text: >
   Built with <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Star field: Draco dSph, Gaia DR3 (ESA/Gaia/DPAC). Field of Streams: V. Belokurov and <a href="https://www.sdss4.org/" target="_blank">SDSS</a>.
+  Star field: Draco dSph, Gaia DR3 (ESA/Gaia/DPAC). Stream image: James Josephides and the <a href="https://s5collab.github.io/" target="_blank">S5 Collaboration</a>.
 keywords: near-field cosmology, dark matter, dwarf galaxies, stellar streams, machine learning, astrostatistics, simulation-based inference # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: 🤖 # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
